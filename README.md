@@ -2,6 +2,9 @@
 
 This guide provides step-by-step instructions for configuring AWS Security Groups to allow necessary traffic for Docker services running Zabbix, MariaDB, and Grafana.
 
+![image](https://github.com/amikha33/Zabbix-Grafana/assets/46167070/415f6891-5ab0-40db-83a2-7fe99c695632)
+
+
 ## Prerequisites
 
 - AWS Management Console access.
