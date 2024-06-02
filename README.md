@@ -1,4 +1,4 @@
-# Configuring AWS Security Groups for Docker Services
+# Configuring Doxkerized Zabbix
 
 This guide provides step-by-step instructions for configuring AWS Security Groups to allow necessary traffic for Docker services running Zabbix, MariaDB, and Grafana.
 
