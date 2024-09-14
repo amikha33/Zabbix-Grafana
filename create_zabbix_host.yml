@@ -1,0 +1,27 @@
+---
+- name: Create a new host in Zabbix
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create a new host in Zabbix
+      community.zabbix.zabbix_host:
+        http_login_user: "Admin"
+        http_login_password: "zabbix"
+        zabbix_url: "http://localhost:8080/api_jsonrpc.php"
+        host_name: "NewHostName-MQ"
+        visible_name: "New Host MQ Visible Name"
+        description: "Description of the new host MQ"
+        host_groups:
+          - 2  # Group ID
+        link_templates:
+          - "Template Name"  # Replace with actual template name or ID
+        interfaces:
+          - type: 1  # Zabbix agent
+            main: 1
+            useip: 1
+            ip: "192.168.1.100"  # IP address of the host
+            dns: ""
+            port: "10050"  # Port number for Zabbix agent
+        state: present
+      delegate_to: localhost
+
