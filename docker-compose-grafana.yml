@@ -54,7 +54,7 @@ services:
       - mariadb-server
     restart: always
     ports:
-      - '80:8080'
+      - '8080:8080'
     environment:
       - DB_SERVER_HOST=mariadb-server
       - MYSQL_DATABASE=zabbix
@@ -104,6 +104,9 @@ services:
       - /dev:/host/dev:ro
       - /etc:/host/etc:ro
       - /var/run/docker.sock:/host/var/run/docker.sock
+      - ./scripts:/scripts  # Mount the ntp-peers.pl script into the container
+      - ./zabbix-agent-conf/zabbix_agent2.conf:/etc/zabbix/zabbix_agent2.conf  # Mount custom Zabbix config
+     # - ./zabbix-agent-conf:/etc/zabbix/zabbix_agentd.d  # Mount custom Zabbix config
     ports:
       - '10050:10050'
     environment:
